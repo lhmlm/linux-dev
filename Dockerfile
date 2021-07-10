@@ -63,6 +63,7 @@ RUN cd $WORK_PATH \
     gcc \
     gcc-multilib \
     git \
+    gnupg \
     gperf \
     iputils-ping \
     less \
@@ -72,6 +73,7 @@ RUN cd $WORK_PATH \
     libssl-dev \
     locales \
     lsb-release \
+    netcat-openbsd \
     openssh-server \
     pkg-config \
     procps \
