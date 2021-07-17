@@ -111,6 +111,28 @@ RUN cd $WORK_PATH \
     libunistring-dev \
     libz-dev \
     nettle-dev \
+# android
+    lib32ncurses5-dev \
+    lib32z-dev \
+    libaio-dev \
+    libattr1-dev \
+    libbluetooth-dev \
+    libbrlapi-dev \
+    libc6-dev-i386 \
+    libcap-dev \
+    libgl1-mesa-dev \
+    libglib2.0-dev \
+    liblzo2-dev \
+    libnuma-dev \
+    libpixman-1-dev \
+    libsnappy-dev \
+    libssl-dev \
+    libvdeplug-dev \
+    libx11-dev \
+    libxml2-utils \
+    openjdk-8-jdk \
+    x11proto-core-dev \
+    xsltproc \
  && apt-get clean \
  && chmod 4755 /usr/bin/sudo \
  && cp /etc/ssh/ssh_config /etc/ssh/ssh_config.bak \
