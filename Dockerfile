@@ -98,6 +98,19 @@ RUN cd $WORK_PATH \
     zip \
     zlib1g-dev \
     zsh \
+# voice SDK
+    libevent-dev \
+    libgnutls-dane0 \
+    libgnutls-openssl27 \
+    libgnutls28-dev \
+    libgnutlsxx28 \
+    libidn2-dev \
+    libjsoncpp-dev \
+    liblog4cpp5-dev \
+    libopus-dev \
+    libunistring-dev \
+    libz-dev \
+    nettle-dev \
  && apt-get clean \
  && chmod 4755 /usr/bin/sudo \
  && cp /etc/ssh/ssh_config /etc/ssh/ssh_config.bak \
@@ -127,6 +140,12 @@ RUN cd $WORK_PATH \
  && ./configure \
  && make -j16 \
  && make install
+
+# install npm
+RUN cd $WORK_PATH \
+ && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+ && apt install -y nodejs yarn \
+ && npm install aiot-vue-cli -g
 
 # 定义环境变量
 COPY base-set-env.sh /etc/profile.d/base-set-env.sh
