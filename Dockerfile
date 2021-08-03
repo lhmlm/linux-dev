@@ -74,6 +74,7 @@ RUN cd $WORK_PATH \
     locales \
     lsb-release \
     netcat-openbsd \
+    nfs-common \
     openssh-server \
     pkg-config \
     procps \
