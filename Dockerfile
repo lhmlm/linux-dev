@@ -79,6 +79,7 @@ RUN cd $WORK_PATH \
     pkg-config \
     procps \
     pv \
+    python-pip \
     python3-pip \
     rsync \
     scons \
@@ -133,6 +134,8 @@ RUN cd $WORK_PATH \
     openjdk-8-jdk \
     x11proto-core-dev \
     xsltproc \
+# other
+    libclang-dev \
  && apt-get clean \
  && chmod 4755 /usr/bin/sudo \
  && cp /etc/ssh/ssh_config /etc/ssh/ssh_config.bak \
@@ -147,7 +150,9 @@ RUN cp /etc/locale.gen /etc/locale.gen.bak \
 
 # 设置 python
 RUN python3 -m pip install -U pip -i https://pypi.tuna.tsinghua.edu.cn/simple \
- && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+ && pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
+ && python  -m pip install setuptools \
+ && python  -m pip install clang
 
 # 安装 repo
 RUN cd /usr/local/bin \
